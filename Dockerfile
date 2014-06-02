@@ -32,7 +32,11 @@ RUN echo 'user:acoman' |chpasswd
 #you can ssh into this container ssh user@<host> -p <whatever 22 has been mapped to>
 
 # Install Openstack Command Line tools
-RUN apt-get install -y python-pip python-simplejson
+RUN apt-get install -y python-pip
+# These are required to keep some of the pip installs happy
+RUN apt-get install -y python-simplejson python-six
+
+#Install the command line tools
 RUN pip install python-ceilometerclient
 RUN pip install python-cinderclient
 RUN pip install python-glanceclient
