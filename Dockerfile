@@ -1,10 +1,9 @@
 #
-# Ubuntu Desktop (Gnome) Dockerfile
+# Ubuntu Openstack command line clients Dockerfile
 #
 # https://github.com/intlabs/dockerfile-ubuntu-openstack-commandline-clients
 #
 
-# Install GNOME3 and VNC server.
 # (c) Pete Birley
 
 # Pull base image.
@@ -56,4 +55,6 @@ CMD bash -C '/usr/local/etc/startup.sh';'bash'
 #CMD "bash"
 
 # Expose ports.
-EXPOSE 22
+
+#SSH
+EXPOSE 22/tcp
