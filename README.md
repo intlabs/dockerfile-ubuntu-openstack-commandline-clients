@@ -25,12 +25,12 @@ This repository contains the *Dockerfile* and *associated files* for setting up 
 
 2. You can then pull the file:
 
-	`sudo docker pull intlabs/dockerfile-ubuntu-fileserver`
+	`sudo docker pull intlabs/dockerfile-ubuntu-openstack-commandline-clients`
 
 
 	Or alternatively build an image from the Dockerfile:
 
-	`sudo docker build -t="intlabs/dockerfile-ubuntu-fileserver" github.com/intlabs/dockerfile-ubuntu-fileserver`
+	`sudo docker build -t="intlabs/dockerfile-ubuntu-openstack-commandline-clients" github.com/intlabs/dockerfile-ubuntu-openstack-commandline-clients`
 
 ### SuperQuick Install
 
@@ -40,8 +40,8 @@ This repository contains the *Dockerfile* and *associated files* for setting up 
 	sudo apt-get -y install docker.io && \
 	sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker && \
 	sudo restart docker.io && \
-	sudo docker pull intlabs/dockerfile-ubuntu-fileserver && \
-	sudo docker run -it --rm -p 222:22 intlabs/dockerfile-ubuntu-fileserver
+	sudo docker pull intlabs/dockerfile-ubuntu-openstack-commandline-clients && \
+	sudo docker run -it --rm -p 222:22 intlabs/dockerfile-ubuntu-openstack-commandline-clients
 
 
 ### Usage
@@ -52,10 +52,10 @@ This repository contains the *Dockerfile* and *associated files* for setting up 
 
 * this will run and drop you into a session:
 
-	`sudo docker run -it --rm -p 222:22 intlabs/dockerfile-ubuntu-fileserver`
+	`sudo docker run -it --rm -p 222:22 intlabs/dockerfile-ubuntu-openstack-commandline-clients`
 
 * or for silent running:
 
-	`sudo docker run -it -d -p 222:22 intlabs/dockerfile-ubuntu-fileserver`
+	`sudo docker run -it -d -p 222:22 intlabs/dockerfile-ubuntu-openstack-commandline-clients`
 
 

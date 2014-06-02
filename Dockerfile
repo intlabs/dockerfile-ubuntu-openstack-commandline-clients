@@ -55,9 +55,8 @@ VOLUME ["/data"]
 WORKDIR /data
 
 # Define default command.
-#CMD bash -C '/usr/local/etc/startup.sh';'bash'
-CMD "bash"
-#CMD    /usr/sbin/sshd -D
+CMD bash -C '/usr/local/etc/startup.sh';'bash'
+#CMD "bash"
 
 # Expose ports.
 EXPOSE 22
