@@ -34,7 +34,8 @@ RUN echo 'user:acoman' |chpasswd
 # Install Openstack Command Line tools
 RUN apt-get install -y python-pip
 # These are required to keep some of the pip installs happy
-RUN apt-get install -y python-simplejson python-six
+RUN apt-get install -y python-simplejson
+RUN apt-get remove -y python-six
 
 #Install the command line tools
 RUN pip install python-ceilometerclient
