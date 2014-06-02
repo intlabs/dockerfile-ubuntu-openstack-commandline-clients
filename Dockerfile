@@ -8,7 +8,7 @@
 # (c) Pete Birley
 
 # Pull base image.
-FROM dockerfile/ubuntu
+FROM dockerfile/ubuntu:14.04
 
 # Setup enviroment variables
 ENV DEBIAN_FRONTEND noninteractive
@@ -31,12 +31,7 @@ RUN echo 'user:acoman' |chpasswd
 
 #you can ssh into this container ssh user@<host> -p <whatever 22 has been mapped to>
 
-# Install Openstack Command Line tools
-#RUN apt-get install -y python-pip
-# These are required to keep some of the pip installs happy
-#RUN apt-get install -y python-simplejson python-six
-
-#Install the command line tools
+#Install the openstack command line tools
 RUN apt-get install -y python-ceilometerclient
 RUN apt-get install -y python-cinderclient
 RUN apt-get install -y python-glanceclient
@@ -47,10 +42,8 @@ RUN apt-get install -y python-novaclient
 RUN apt-get install -y python-swiftclient
 #RUN apt-get install -y python-troveclient
 
-
 ADD startup.sh /usr/local/etc/startup.sh
 RUN chmod +x /usr/local/etc/startup.sh
-
 
 # Define mountable directories.
 VOLUME ["/data"]
