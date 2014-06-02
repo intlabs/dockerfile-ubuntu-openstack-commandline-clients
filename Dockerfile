@@ -32,21 +32,20 @@ RUN echo 'user:acoman' |chpasswd
 #you can ssh into this container ssh user@<host> -p <whatever 22 has been mapped to>
 
 # Install Openstack Command Line tools
-RUN apt-get install -y python-pip
+#RUN apt-get install -y python-pip
 # These are required to keep some of the pip installs happy
-RUN apt-get install -y python-simplejson
-RUN apt-get remove -y python-six
+#RUN apt-get install -y python-simplejson python-six
 
 #Install the command line tools
-RUN pip install python-ceilometerclient
-RUN pip install python-cinderclient
-RUN pip install python-glanceclient
-RUN pip install python-heatclient
-RUN pip install python-keystoneclient
-RUN pip install python-neutronclient
-RUN pip install python-novaclient
-RUN pip install python-swiftclient
-#RUN pip install python-troveclient
+RUN apt-get install -y python-ceilometerclient
+RUN apt-get install -y python-cinderclient
+RUN apt-get install -y python-glanceclient
+RUN apt-get install -y python-heatclient
+RUN apt-get install -y python-keystoneclient
+RUN apt-get install -y python-neutronclient
+RUN apt-get install -y python-novaclient
+RUN apt-get install -y python-swiftclient
+#RUN apt-get install -y python-troveclient
 
 
 ADD startup.sh /usr/local/etc/startup.sh
